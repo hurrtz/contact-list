@@ -1,17 +1,24 @@
 {
-    "plugins": ["react"],
-    "extends": [
-        "plugin:prettier/recommended",
-        "prettier/react",
-        "prettier/standard",
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "parserOptions": {
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true,
-            "modules": true
-        }
+  "plugins": ["react"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/standard",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
     }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }]
+  }
 }
