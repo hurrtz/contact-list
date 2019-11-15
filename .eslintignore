@@ -62,4 +62,6 @@ typings/
 
 .vscode
 build
-cache
+
+config
+scripts
