@@ -12,17 +12,28 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint src/**/*.js",
     "lint:eslint": "eslint",
+    "lint:eslint:fix": "eslint --fix",
     "lint:js": "npm run lint:eslint -- .",
     "lint:staged": "lint-staged",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverageNative && rimraf ./coverageWeb",
-    "test": "npm run test:web && npm run test:native",
+    "test": "",
     "test:web-watch": "node scripts/test.js --watch --config \"./config/web.jest.config.js\"",
     "test:web": "node scripts/test.js --config \"./config/web.jest.config.js\"",
     "test:native": "node scripts/test.js --config \"./config/native.jest.config.js\"",
     "test:native-watch": "node scripts/test.js --watch --config \"./config/native.jest.config.js\"",
     "coverage": "node scripts/test.js --coverage --config \"./config/web.jest.config.js\"",
     "coverage:native": "node scripts/test.js --config \"./config/native.jest.config.js\" --coverage"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:eslint:fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
   },
   "dependencies": {
     "@types/jest": "^24.0.23",
@@ -87,6 +98,7 @@
     "pre-commit": "^1.2.2",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.0",
+    "prop-types": "^15.7.2",
     "react-dev-utils": "^6.1.1",
     "react-hot-loader": "^4.6.3",
     "react-test-renderer": "^16.6.3",
