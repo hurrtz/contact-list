@@ -3,5 +3,5 @@ export {
   Switch,
   Route,
   Link,
-  Redirect
-} from "react-router-native";
+  Redirect,
+} from 'react-router-native';
