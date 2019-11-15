@@ -7,7 +7,7 @@ import { Contact as ContactPropType } from 'props';
 const ContactsList = ({ contacts }) => (
   <Fragment>
     {contacts.map(contact => (
-      <Text key={contact.id}>{contact.name}</Text>
+      <Text key={contact.id}>{`Name: ${contact.name}`}</Text>
     ))}
   </Fragment>
 );
