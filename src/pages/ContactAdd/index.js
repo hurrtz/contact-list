@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const AddContactPage = ({ handleAddContact }) => {
+const ContactAddPage = ({ handleAddContact }) => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -206,7 +206,7 @@ const AddContactPage = ({ handleAddContact }) => {
   );
 };
 
-AddContactPage.propTypes = {
+ContactAddPage.propTypes = {
   handleAddContact: PropTypes.func.isRequired,
 };
 
@@ -218,4 +218,4 @@ export function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(undefined, mapDispatchToProps);
 
-export default compose(withConnect, memo)(AddContactPage);
+export default compose(withConnect, memo)(ContactAddPage);

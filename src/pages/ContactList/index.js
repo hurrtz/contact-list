@@ -36,11 +36,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const OverviewPage = ({ selectedContact }) => (
+const ContactListPage = ({ selectedContact }) => (
   <View>
     <View style={styles.header}>
       <Text style={styles.headline}>Contacts</Text>
-      <Link to="/addContact">
+      <Link to="/new">
         <Button title="Add new contact" onPress={() => {}} />
       </Link>
     </View>
@@ -53,7 +53,7 @@ const OverviewPage = ({ selectedContact }) => (
   </View>
 );
 
-OverviewPage.propTypes = {
+ContactListPage.propTypes = {
   selectedContact: Contact,
 };
 
@@ -63,4 +63,4 @@ const mapStateToProps = createStructuredSelector({
 
 const withConnect = connect(mapStateToProps);
 
-export default compose(withConnect, memo)(OverviewPage);
+export default compose(withConnect, memo)(ContactListPage);
