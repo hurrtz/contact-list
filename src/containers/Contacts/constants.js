@@ -3,10 +3,35 @@ const NS = 'Contacts';
 export const FETCH_CONTACTS = `${NS}/fetch`;
 export const SET_CONTACTS = `${NS}/set`;
 export const SET_SELECTED_CONTACT = `${NS}/setSelectedContact`;
+export const ADD_CONTACT = `${NS}/add`;
 
 export const FETCH_CONTACTS_URL = 'https://jsonplaceholder.typicode.com/users';
 
-export const ContactTobiasWinkler = {
+export const CONTACT_DUMMY = {
+  id: '',
+  name: '',
+  username: '',
+  email: '',
+  address: {
+    street: '',
+    suite: '',
+    city: '',
+    zipcode: '',
+    geo: {
+      lat: '',
+      lng: '',
+    },
+  },
+  phone: '',
+  website: '',
+  company: {
+    name: '',
+    catchPhrase: '',
+    bs: '',
+  },
+};
+
+export const CONTACT_TOBIASWINKLER = {
   id: 'tobiaswinkler',
   name: 'Tobias Winkler',
   username: 'tobias',

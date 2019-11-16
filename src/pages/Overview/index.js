@@ -2,11 +2,12 @@ import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import { Contact } from 'props';
 import Contacts from 'containers/Contacts';
-import ContactDetails from 'components/ContactDetails';
 import { makeSelectSelectedContact } from 'containers/Contacts/selectors';
+import ContactDetails from 'components/ContactDetails';
+import { Link } from 'utils/router';
 
 const styles = StyleSheet.create({
   headline: {
@@ -28,11 +29,20 @@ const styles = StyleSheet.create({
     borderLeftStyle: 'solid',
     borderLeftWidth: 1,
   },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
 
 const OverviewPage = ({ selectedContact }) => (
   <View>
-    <Text style={styles.headline}>Contacts</Text>
+    <View style={styles.header}>
+      <Text style={styles.headline}>Contacts</Text>
+      <Link to="/addContact">
+        <Button title="Add new contact" onPress={() => {}} />
+      </Link>
+    </View>
     <View style={styles.content}>
       <Contacts />
       {selectedContact && (
