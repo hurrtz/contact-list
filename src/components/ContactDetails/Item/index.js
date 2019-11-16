@@ -1,15 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-const styles = StyleSheet.create({
-  item: {
-    marginTop: '1rem',
-  },
-  title: {
-    fontWeight: '100',
-  },
-});
+import styles from './styles';
 
 const Item = ({ title }) => {
   return (

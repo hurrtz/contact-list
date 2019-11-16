@@ -1,9 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-const COLOR_DEFAULT = '#CCC';
-const COLOR_SELECTED = '#AAA';
+import styles, { COLOR_DEFAULT, COLOR_SELECTED } from './styles';
 
 const Item = ({ id, title, selected, onSelect, style }) => (
   <TouchableOpacity
@@ -17,13 +16,6 @@ const Item = ({ id, title, selected, onSelect, style }) => (
     <Text>{title}</Text>
   </TouchableOpacity>
 );
-
-const styles = StyleSheet.create({
-  item: {
-    backgroundColor: COLOR_DEFAULT,
-    padding: 20,
-  },
-});
 
 Item.propTypes = {
   id: PropTypes.string,

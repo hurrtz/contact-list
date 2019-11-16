@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
+import { View, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Item from './Item';
-
-const styles = StyleSheet.create({
-  firstItem: {},
-  subsequentItems: {
-    marginTop: '0.5rem',
-  },
-});
+import styles from './styles';
 
 const List = ({ items, onChange }) => {
   const [selected, setSelected] = useState(undefined);
