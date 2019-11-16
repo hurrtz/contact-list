@@ -5,25 +5,23 @@ import PropTypes from 'prop-types';
 const COLOR_DEFAULT = '#CCC';
 const COLOR_SELECTED = '#AAA';
 
-const Item = ({ id, title, selected, onSelect }) => {
-  return (
-    <TouchableOpacity
-      onPress={() => onSelect(id)}
-      style={[
-        styles.item,
-        { backgroundColor: selected ? COLOR_SELECTED : COLOR_DEFAULT },
-      ]}
-    >
-      <Text>Name: {title}</Text>
-    </TouchableOpacity>
-  );
-};
+const Item = ({ id, title, selected, onSelect, style }) => (
+  <TouchableOpacity
+    onPress={() => onSelect(id)}
+    style={[
+      styles.item,
+      style,
+      { backgroundColor: selected ? COLOR_SELECTED : COLOR_DEFAULT },
+    ]}
+  >
+    <Text>{title}</Text>
+  </TouchableOpacity>
+);
 
 const styles = StyleSheet.create({
   item: {
     backgroundColor: COLOR_DEFAULT,
     padding: 20,
-    marginTop: '1rem',
   },
 });
 
@@ -32,6 +30,7 @@ Item.propTypes = {
   title: PropTypes.string,
   selected: PropTypes.bool,
   onSelect: PropTypes.func,
+  style: PropTypes.number,
 };
 
 export default Item;
