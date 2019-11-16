@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Router, Switch, Route } from 'utils/router'; // we prepared react-router for you here
 import ContactListPage from 'pages/ContactList';
 import ContactAddPage from 'pages/ContactAdd';
+import ContactDetailsPage from 'pages/ContactDetails';
 
 class App extends PureComponent {
   render() {
@@ -12,6 +13,7 @@ class App extends PureComponent {
           <Switch>
             <Route path="/" exact component={ContactListPage} />
             <Route path="/new" exact component={ContactAddPage} />
+            <Route path="/details" exact component={ContactDetailsPage} />
           </Switch>
         </View>
       </Router>
