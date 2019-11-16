@@ -73,17 +73,9 @@ const AddContactPage = ({ handleAddContact }) => {
   const [doRedirect, setDoRedirect] = useState(false);
 
   const handleSubmit = () => {
-    if (!name) {
-      setNameIsFilled(false);
-    }
-
-    if (!username) {
-      setUsernameIsFilled(false);
-    }
-
-    if (!email) {
-      setEmailIsFilled(false);
-    }
+    setNameIsFilled(!!name);
+    setUsernameIsFilled(!!username);
+    setEmailIsFilled(!!email);
 
     if (name && username && email) {
       handleAddContact({
