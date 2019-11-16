@@ -39,7 +39,18 @@ const ContactDetails = ({
         `Username: ${username}`,
         `Email: ${email}`,
         `Phone: ${phone}`,
-        `Website: ${website}`,
+        <Text key="website">
+          Website:{' '}
+          <a
+            href={
+              website.substr(0, 4) === 'http' ? website : `http://${website}`
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {website}
+          </a>
+        </Text>,
       ],
     },
   ];

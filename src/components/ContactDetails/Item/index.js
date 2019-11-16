@@ -20,7 +20,7 @@ const Item = ({ title }) => {
 };
 
 Item.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
 };
 
 export default Item;
