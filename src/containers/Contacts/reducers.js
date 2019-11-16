@@ -1,4 +1,8 @@
-import { SET_CONTACTS, SET_SELECTED_CONTACT } from './constants';
+import {
+  SET_CONTACTS,
+  SET_SELECTED_CONTACT,
+  ContactTobiasWinkler,
+} from './constants';
 
 export const initialState = {
   items: [],
@@ -8,7 +12,7 @@ export const initialState = {
 const contactsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CONTACTS:
-      return { ...state, items: action.payload };
+      return { ...state, items: [ContactTobiasWinkler, ...action.payload] };
 
     case SET_SELECTED_CONTACT:
       return { ...state, selected: action.payload };
