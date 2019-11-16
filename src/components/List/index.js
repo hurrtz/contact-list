@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 
 import Item from './Item';
 
-const List = ({ items }) => {
-  const [selected, setSelected] = useState('');
+const List = ({ items, onChange }) => {
+  const [selected, setSelected] = useState(undefined);
 
   const onSelect = id => {
-    if (selected === id) {
-      setSelected('');
-    } else {
-      setSelected(id);
-    }
+    const newSelectedValue = selected === id ? undefined : id;
+
+    setSelected(newSelectedValue);
+    onChange(newSelectedValue);
   };
 
   return (
@@ -35,7 +34,12 @@ const List = ({ items }) => {
 };
 
 List.propTypes = {
-  items: PropTypes.array,
+  items: PropTypes.array.isRequired,
+  onChange: PropTypes.func,
+};
+
+List.defaultProps = {
+  onChange: () => {},
 };
 
 export default List;
