@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Router, Switch, Route } from 'utils/router'; // we prepared react-router for you here
-import Contacts from 'containers/Contacts';
+import OverviewPage from 'pages/Overview';
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     return (
       <Router>
         <View style={styles.container}>
           <Switch>
-            <Route path="/" exact component={Contacts} />
+            <Route path="/" exact component={OverviewPage} />
           </Switch>
         </View>
       </Router>

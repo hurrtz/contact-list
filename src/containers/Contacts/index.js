@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
 
 import { Contact as ContactPropType } from 'props';
-import ContactsList from 'components/ContactsList';
+import List from 'components/List';
 import { fetchContacts } from './actions';
 import { makeSelectContacts } from './selectors';
 
@@ -14,7 +14,7 @@ const Contacts = ({ doFetchContacts, contacts }) => {
     doFetchContacts();
   }, []);
 
-  return <ContactsList contacts={contacts} />;
+  return <List items={contacts} />;
 };
 
 Contacts.propTypes = {

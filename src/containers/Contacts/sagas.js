@@ -9,7 +9,9 @@ function* fetchContacts() {
 
   if (contacts.length === 0) {
     try {
-      contacts = yield fetch(FETCH_CONTACTS_URL).then(data => data.json());
+      contacts = yield fetch(FETCH_CONTACTS_URL)
+        .then(data => data.json())
+        .then(data => data.map(item => ({ ...item, id: `${item.id}` }))); // convert id to string to fix proptype error with flatlist items
       yield put(setContacts(contacts));
     } catch (error) {
       console.error(error);

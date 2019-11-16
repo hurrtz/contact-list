@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export const Contact = PropTypes.shape({
-  id: PropTypes.number,
+  id: PropTypes.string,
   name: PropTypes.string,
   username: PropTypes.string,
   email: PropTypes.string,
