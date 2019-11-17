@@ -8,6 +8,7 @@ import Contacts from 'containers/Contacts';
 import { makeSelectSelectedContact } from 'containers/Contacts/selectors';
 import ContactDetails from 'components/ContactDetails';
 import { Link } from 'utils/router';
+import { isDesktop } from 'utils/common';
 
 import styles from './styles';
 
@@ -21,7 +22,7 @@ const ContactListPage = ({ selectedContact }) => (
     </View>
     <View style={styles.content}>
       <Contacts />
-      {selectedContact && (
+      {isDesktop && selectedContact && (
         <ContactDetails {...selectedContact} style={styles.details} />
       )}
     </View>

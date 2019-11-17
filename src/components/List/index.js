@@ -16,20 +16,18 @@ const List = ({ items, onChange }) => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={items}
-        renderItem={({ item, index }) => {
-          return (
-            <Item
-              id={item.id}
-              title={item.name}
-              selected={selected === item.id}
-              onSelect={onSelect}
-              style={index === 0 ? styles.firstItem : styles.subsequentItems}
-            />
-          );
-        }}
+        renderItem={({ item, index }) => (
+          <Item
+            id={item.id}
+            title={item.name}
+            selected={selected === item.id}
+            onSelect={onSelect}
+            style={index === 0 ? styles.firstItem : styles.subsequentItems}
+          />
+        )}
         keyExtractor={item => item.id}
         extraData={selected}
       />

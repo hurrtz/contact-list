@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { isDesktop } from 'utils/common';
 
 export default StyleSheet.create({
   headline: {
@@ -14,11 +15,11 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   details: {
-    marginLeft: '2rem',
-    paddingLeft: '2rem',
+    marginLeft: isDesktop ? '2rem' : 0,
+    paddingLeft: isDesktop ? '2rem' : 0,
     borderLeftColor: '#AAA',
     borderLeftStyle: 'solid',
-    borderLeftWidth: 1,
+    borderLeftWidth: isDesktop ? 1 : 0,
   },
   header: {
     flexDirection: 'row',

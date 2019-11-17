@@ -42,8 +42,6 @@ const ContactDetails = ({
     },
   ];
 
-  console.warn(createGravatarURL(MD5(email.toLowerCase())));
-
   return (
     <View style={styles.container}>
       <SectionList

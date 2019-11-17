@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { isDesktop } from 'utils/common';
 
 export default StyleSheet.create({
   container: {},
@@ -15,27 +16,29 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: isDesktop ? 'row' : 'column',
+    alignItems: isDesktop ? 'center' : 'stretch',
     marginTop: '1rem',
   },
   label: {
-    width: 75,
+    width: isDesktop ? 75 : '100%',
   },
   required: {
     display: 'none',
-    marginLeft: '0.5rem',
+    marginLeft: isDesktop ? '0.5rem' : 0,
+    marginTop: isDesktop ? 0 : '0.5em',
   },
   input: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
-    marginLeft: '1rem',
+    marginLeft: isDesktop ? '1rem' : 0,
+    marginTop: isDesktop ? 0 : '0.5em',
     paddingHorizontal: 10,
     paddingVertical: 5,
   },
   ctaWrapper: {
-    flexDirection: 'row',
+    flexDirection: isDesktop ? 'row' : 'column',
     marginTop: '2rem',
   },
   inputWithError: {
