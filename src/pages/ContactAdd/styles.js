@@ -51,4 +51,9 @@ export default StyleSheet.create({
     display: 'static',
     color: 'red',
   },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 });

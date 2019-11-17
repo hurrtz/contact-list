@@ -8,6 +8,6 @@ export default StyleSheet.create({
   item: {
     backgroundColor: COLOR_DEFAULT,
     padding: 20,
-    textAlign: isDesktop ? 'left' : 'center',
+    alignItems: isDesktop ? 'flex-start' : 'center',
   },
 });

@@ -7,10 +7,11 @@ import PropTypes from 'prop-types';
 import { addContact } from 'containers/Contacts/actions';
 import { CONTACT_DUMMY } from 'containers/Contacts/constants';
 import { Redirect } from 'utils/router';
+import { isMobile } from 'utils/common';
 
 import styles from './styles';
 
-const ContactAddPage = ({ handleAddContact }) => {
+const ContactAddPage = ({ handleAddContact, history }) => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -49,7 +50,18 @@ const ContactAddPage = ({ handleAddContact }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.headline}>Add new contact</Text>
+      <View style={styles.header}>
+        <Text style={styles.headline}>Add new contact</Text>
+        {isMobile && (
+          <Button
+            title="Back"
+            onPress={event => {
+              event.preventDefault();
+              history.goBack();
+            }}
+          />
+        )}
+      </View>
       <View style={styles.content}>
         <View style={[styles.row, { marginTop: 0 }]}>
           <Text
@@ -160,6 +172,7 @@ const ContactAddPage = ({ handleAddContact }) => {
 
 ContactAddPage.propTypes = {
   handleAddContact: PropTypes.func.isRequired,
+  history: PropTypes.object,
 };
 
 export function mapDispatchToProps(dispatch) {
